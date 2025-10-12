@@ -1,22 +1,69 @@
 export function Testimonials() {
   const list = [
-    { name: "Ananya", text: "The analytics helped me focus on weak topics. Practice felt like the real exam." },
-    { name: "Rohit", text: "Clean UI and fast filters. I finally stopped wasting time hunting for PYQs." },
-    { name: "Meera", text: "AI hints clarified tricky concepts without giving away the full solution." },
+    {
+      name: "Ananya",
+      title: "NEET Aspirant",
+      avatar: "/placeholder-user.jpg",
+      text: "The analytics helped me focus on weak topics. Practice felt like the real exam.",
+    },
+    {
+      name: "Rohit",
+      title: "JEE Advanced Aspirant",
+      avatar: "/placeholder-user.jpg",
+      text: "Clean UI and fast filters. I finally stopped wasting time hunting for PYQs.",
+    },
+    {
+      name: "Meera",
+      title: "AIIMS Aspirant",
+      avatar: "/placeholder-user.jpg",
+      text: "AI hints clarified tricky concepts without giving away the full solution.",
+    },
+    {
+      name: "Priya",
+      title: "Medical Student",
+      avatar: "/placeholder-user.jpg",
+      text: "The detailed performance breakdown is a game-changer. I can track my progress chapter-wise.",
+    },
+    {
+      name: "Kiran",
+      title: "Aspiring Engineer",
+      avatar: "/placeholder-user.jpg",
+      text: "Solving papers on a platform that mirrors the actual exam interface boosted my confidence.",
+    },
+    {
+      name: "Suresh",
+      title: "Repeat Aspirant",
+      avatar: "/placeholder-user.jpg",
+      text: "The AI-powered doubt clarification is brilliant. It's like having a 24/7 tutor.",
+    },
   ]
   return (
-    <section className="reveal-init bg-section">
+    <section className="bg-section">
       <div className="container mx-auto px-4 py-24">
         <h2 className="font-heading text-4xl sm:text-5xl font-semibold tracking-tight text-center text-balance">
           What students say
         </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((t) => (
-            <figure key={t.name} className="rounded-lg border bg-card p-6">
-              <blockquote className="text-base text-pretty">&ldquo;{t.text}&rdquo;</blockquote>
-              <figcaption className="mt-3 text-sm text-muted-foreground">— {t.name}</figcaption>
-            </figure>
-          ))}
+        <div
+          className="relative mt-12 overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
+        >
+          <div className="flex animate-marquee">
+            {[...list, ...list].map((t, i) => (
+              <figure key={i} className="mx-3 w-full max-w-sm rounded-lg border-3 bg-card p-6 flex-shrink-0">
+                <blockquote className="text-base text-pretty">&ldquo;{t.text}&rdquo;</blockquote>
+                <figcaption className="mt-4 flex items-center gap-3">
+                  <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full" />
+                  <div className="text-sm">
+                    <p className="font-semibold">{t.name}</p>
+                    <p className="text-muted-foreground">{t.title}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>

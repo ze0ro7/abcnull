@@ -90,63 +90,65 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {plans.map((p) => (
-            <Card
-              key={p.name}
-              className={cn(
-                "reveal-item relative overflow-hidden group",
-                "border-border/60 bg-background/60 backdrop-blur",
-                "hover:-translate-y-1.5 transition-all duration-300",
-                p.highlighted ? "ring-1 ring-[color:var(--primary)]" : "",
-              )}
-            >
-              <div
-                aria-hidden
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-4">
+            {plans.map((p) => (
+              <Card
+                key={p.name}
                 className={cn(
-                  "pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-25 transition-opacity",
-                  "bg-[radial-gradient(300px_120px_at_50%_-10%,var(--primary),transparent_60%)]",
+                  "reveal-item relative overflow-hidden group",
+                  "border-border/60 bg-background/60 backdrop-blur",
+                  "hover:-translate-y-1.5 transition-all duration-300",
+                  p.highlighted ? "ring-1 ring-[color:var(--primary)]" : "",
                 )}
-              />
-              <CardHeader className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="font-heading text-xl md:text-2xl">{p.name}</CardTitle>
-                  {p.badge ? (
-                    <Badge variant="secondary" className="rounded-full text-xs md:text-sm">
-                      {p.badge}
-                    </Badge>
-                  ) : null}
-                </div>
-                <CardDescription className="text-sm md:text-base">{p.blurb}</CardDescription>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <span className="font-heading text-4xl md:text-5xl">{p.price}</span>
-                  <span className="text-sm md:text-base text-muted-foreground">/ {p.period}</span>
-                </div>
-              </CardHeader>
+              >
+                <div
+                  aria-hidden
+                  className={cn(
+                    "pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-25 transition-opacity",
+                    "bg-[radial-gradient(300px_120px_at_50%_-10%,var(--primary),transparent_60%)]",
+                  )}
+                />
+                <CardHeader className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="font-heading text-xl md:text-2xl">{p.name}</CardTitle>
+                    {p.badge ? (
+                      <Badge variant="secondary" className="rounded-full text-xs md:text-sm">
+                        {p.badge}
+                      </Badge>
+                    ) : null}
+                  </div>
+                  <CardDescription className="text-sm md:text-base">{p.blurb}</CardDescription>
+                  <div className="mt-2 flex items-baseline gap-2">
+                    <span className="font-heading text-4xl md:text-5xl">{p.price}</span>
+                    <span className="text-sm md:text-base text-muted-foreground">/ {p.period}</span>
+                  </div>
+                </CardHeader>
 
-              <CardContent className="space-y-4">
-                <Button
-                  variant={p.highlighted ? "default" : "secondary"}
-                  className={cn("w-full", p.highlighted ? "" : "bg-transparent border")}
-                  aria-label={p.cta}
-                >
-                  {p.cta}
-                </Button>
+                <CardContent className="space-y-4">
+                  <Button
+                    variant={p.highlighted ? "default" : "secondary"}
+                    className={cn("w-full", p.highlighted ? "" : "bg-transparent border")}
+                    aria-label={p.cta}
+                  >
+                    {p.cta}
+                  </Button>
 
-                <div className="pt-2">
-                  <div className="text-xs md:text-sm text-muted-foreground mb-2">FEATURES</div>
-                  <ul className="grid gap-2 text-sm md:text-base">
-                    {p.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2">
-                        <span className="mt-1 size-1.5 rounded-full bg-[color:var(--primary)] shrink-0" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <div className="pt-2">
+                    <div className="text-xs md:text-sm text-muted-foreground mb-2">FEATURES</div>
+                    <ul className="grid gap-2 text-sm md:text-base">
+                      {p.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2">
+                          <span className="mt-1 size-1.5 rounded-full bg-[color:var(--primary)] shrink-0" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <p className="mt-8 md:mt-10 text-center text-xs md:text-sm text-muted-foreground">

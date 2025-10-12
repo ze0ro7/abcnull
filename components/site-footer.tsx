@@ -31,17 +31,17 @@ export function SiteFooter() {
         {/* About */}
         <nav aria-labelledby="footer-about" className="md:col-span-3">
           <h4 id="footer-about" className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3">
-            About
+            Quick Link
           </h4>
           <ul className="space-y-2 text-sm">
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/about">
-                About
+                Practice PYQs
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/contact">
-                Submit an issue
+                Sign in
               </Link>
             </li>
             <li>
@@ -51,12 +51,12 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noreferrer"
               >
-                GitHub Repo
+                Sign up 
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/community">
-                Slack/Community
+                About
               </Link>
             </li>
           </ul>
@@ -68,32 +68,32 @@ export function SiteFooter() {
             id="footer-getting-started"
             className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3"
           >
-            Getting Started
+            Gate Branches
           </h4>
           <ul className="space-y-2 text-sm">
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/docs/introduction">
-                Introduction
+                Chemical Engineering
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/docs">
-                Documentation
+                Computer Science Engineering
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/pricing">
-                Pricing
+                Civil Engineering
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/gate">
-                GATE
+                Mechanical Engineering
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/features">
-                Features
+                Electronic & Electrical Engineering
               </Link>
             </li>
           </ul>
@@ -102,22 +102,22 @@ export function SiteFooter() {
         {/* Resources */}
         <nav aria-labelledby="footer-resources" className="md:col-span-3">
           <h4 id="footer-resources" className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3">
-            Resources
+           Support
           </h4>
           <ul className="space-y-2 text-sm">
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/api">
-                API
+              Help center
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/guides/validation">
-                Form Validation
+                Contact Us
               </Link>
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/accessibility">
-                Accessibility
+                Privacy policy
               </Link>
             </li>
             <li>
@@ -127,7 +127,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link className="text-muted-foreground hover:text-foreground" href="/marketplace">
-                Marketplace
+                Terms of service
               </Link>
             </li>
           </ul>
