@@ -7,19 +7,22 @@ import { PricingSection } from "@/components/sections/pricing"
 import { Testimonials } from "@/components/sections/testimonials"
 import FAQSection from "@/components/sections/faq"
 import CTASection from "@/components/sections/cta"
+import { SectionRevealController } from "@/components/animations/section-reveal-controller"
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Features />
-      <HowItWorksSection />
-      <StatsSection />
-      <BranchesGrid />
-      <PricingSection />
-      <Testimonials />
-      <FAQSection />
-      <CTASection />
+      <SectionRevealController>
+        <Hero />
+        <Features />
+        <HowItWorksSection />
+        <StatsSection />
+        <BranchesGrid />
+        <PricingSection />
+        <Testimonials />
+        <FAQSection />
+        <CTASection />
+      </SectionRevealController>
     </>
   )
 }

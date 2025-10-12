@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    allowedDevOrigins: ["https://3000-firebase-abcnull-1760260558356.cluster-edb2jv34dnhjisxuq5m7l37ccy.cloudworkstations.dev"],
+  }
 }
 
 export default nextConfig

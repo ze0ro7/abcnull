@@ -1,8 +1,12 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, ReactNode } from "react"
 
-export default function SectionRevealController() {
+type Props = {
+  children: ReactNode
+}
+
+export function SectionRevealController({ children }: Props) {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     // Observe ALL sections across the document to avoid missing pages that don't wrap in <main>
@@ -58,5 +62,5 @@ export default function SectionRevealController() {
     }
   }, [])
 
-  return null
+  return <>{children}</>
 }

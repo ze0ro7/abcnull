@@ -7,8 +7,7 @@ import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Suspense } from "react"
-import SectionRevealController from "@/components/animations/section-reveal-controller"
-import RevealSafety from "@/components/animations/reveal-safety"
+import { SectionRevealController } from "@/components/animations/section-reveal-controller"
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-heading", weight: ["400", "600", "700", "800"] })
 
@@ -26,8 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${orbitron.variable} antialiased`}>
       <body className={`font-sans`}>
-        <SectionRevealController />
-        <RevealSafety />
         <Suspense fallback={<div>Loading...</div>}>
           <SiteHeader />
           <main className="min-h-[calc(100dvh-64px-320px)]">{children}</main>
