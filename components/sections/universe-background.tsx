@@ -49,8 +49,8 @@ export function UniverseBackground() {
 
     // Star density tuned higher for "dense universe"
     const area = widthCss * heightCss
-    const BASE_DENSITY = 1 / 2500 // higher density than before
-    const MAX_STARS = 900
+    const BASE_DENSITY = 1 / 500 // higher density than before
+    const MAX_STARS = 1700
     const STAR_COUNT = Math.min(Math.floor(area * BASE_DENSITY), MAX_STARS)
 
     const stars: Star[] = []
@@ -133,7 +133,7 @@ export function UniverseBackground() {
 
     function drawGridLightMode() {
       // Subtle animated grid for light mode only
-      const spacing = 48
+      const spacing = 40
       const lineColor = "rgba(0,0,0,0.05)"
       ctx.strokeStyle = lineColor
       ctx.lineWidth = 1

@@ -36,7 +36,7 @@ export function Hero() {
               <Link href="/pricing">See pricing</Link>
             </Button>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">No credit card needed</p>
+          <p className="mt-4 text-xs text-muted-foreground">Use Dark Mode for Better Experience</p>
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
