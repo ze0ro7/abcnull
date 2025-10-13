@@ -13,6 +13,11 @@ function getPreferredTheme() {
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">(getPreferredTheme)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const root = document.documentElement
@@ -24,15 +29,18 @@ export function ThemeToggle() {
     window.localStorage.setItem("qprep-theme", theme)
   }, [theme])
 
+  const themeIcon = theme === "dark" ? "🌙" : "☀️"
+  const ariaPressed = mounted ? (theme === "dark") : undefined
+
   return (
     <Button
       variant="ghost"
       size="icon"
       aria-label="Toggle theme"
-      aria-pressed={theme === "dark"}
+      aria-pressed={ariaPressed}
       onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
     >
-      <span className="text-sm">{theme === "dark" ? "🌙" : "☀️"}</span>
+      <span className="text-sm">{mounted ? themeIcon : null}</span>
       <span className="sr-only">Toggle dark mode</span>
     </Button>
   )

@@ -1,21 +1,27 @@
 "use client"
+import { ClipboardList, Timer, BarChart, Bot } from "lucide-react"
+
 export function Features() {
   const items = [
     {
       title: "Curated PYQs",
       desc: "Indexed by branch, subject, topic, and year for fast discovery.",
+      icon: <ClipboardList className="w-8 h-8 mb-4 text-primary" />,
     },
     {
       title: "Realistic mocks",
       desc: "Timed tests with auto-scoring and detailed solutions.",
+      icon: <Timer className="w-8 h-8 mb-4 text-primary" />,
     },
     {
       title: "Smart analytics",
       desc: "Find weak topics and track improvement over time.",
+      icon: <BarChart className="w-8 h-8 mb-4 text-primary" />,
     },
     {
       title: "AI assistance",
       desc: "Get hints and step-by-step explanations with credits.",
+      icon: <Bot className="w-8 h-8 mb-4 text-primary" />,
     },
   ]
   return (
@@ -34,6 +40,7 @@ export function Features() {
               key={f.title}
               className="reveal-item group rounded-xl border bg-card p-7 md:p-8 min-h-[260px] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl hover:bg-accent/50 hover:border-primary/30 will-change-transform"
             >
+              {f.icon}
               <h3 className="font-medium text-xl">{f.title}</h3>
               <p className="mt-3 text-muted-foreground leading-7 text-base">{f.desc}</p>
             </article>

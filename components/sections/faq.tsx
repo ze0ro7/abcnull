@@ -36,7 +36,7 @@ export default function FAQSection() {
           <p className="text-muted-foreground mt-3">Everything you need to know about using Qprep effectively.</p>
         </header>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (
               <AccordionItem

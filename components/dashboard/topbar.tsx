@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useState } from "react"
+import { ThemeToggle } from '@/components/theme-toggle'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useState } from 'react'
 
 export function Topbar({ name }: { name: string }) {
-  const initial = (name?.trim()?.[0] || "U").toUpperCase()
-  const [exam, setExam] = useState("GATE")
-  const [branch, setBranch] = useState("CSE")
+  const initial = (name?.trim()?.[0] || 'U').toUpperCase()
+  const [exam, setExam] = useState('GATE')
+  const [branch, setBranch] = useState('CSE')
 
   return (
     <header className="col-start-2 row-start-1 h-16 border-b bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40">
@@ -26,17 +26,21 @@ export function Topbar({ name }: { name: string }) {
                 <SelectItem value="NEET">NEET</SelectItem>
               </SelectContent>
             </Select>
-            <Select value={branch} onValueChange={setBranch}>
-              <SelectTrigger className="w-[140px]">
-                <SelectValue placeholder="Branch" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="CSE">CSE</SelectItem>
-                <SelectItem value="ECE">ECE</SelectItem>
-                <SelectItem value="ME">ME</SelectItem>
-                <SelectItem value="EE">EE</SelectItem>
-              </SelectContent>
-            </Select>
+            {exam === 'GATE' && (
+              <Select value={branch} onValueChange={setBranch}>
+                <SelectTrigger className="w-[140px]">
+                  <SelectValue placeholder="Branch" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="CE">CE</SelectItem>
+                  <SelectItem value="CHE">CHE</SelectItem>
+                  <SelectItem value="CSE">CSE</SelectItem>
+                  <SelectItem value="ECE">ECE</SelectItem>
+                  <SelectItem value="EE">EE</SelectItem>
+                  <SelectItem value="ME">ME</SelectItem>
+                </SelectContent>
+              </Select>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-3">

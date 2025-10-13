@@ -25,9 +25,9 @@ export function SiteHeader() {
             <img
               src="/images/qprep-logo.png"
               alt="Qprep logo"
-              width={32}
-              height={32}
-              className="h-8 w-8 rounded-full ring-2 ring-primary/40"
+              width={40}
+              height={40}
+              className="h-9 w-9 rounded-full ring-2 ring-primary/60"
             />
             <span className="font-heading text-lg">Qprep</span>
             <span className="sr-only">Back to home</span>

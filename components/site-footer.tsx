@@ -30,7 +30,7 @@ export function SiteFooter() {
 
         {/* About */}
         <nav aria-labelledby="footer-about" className="md:col-span-3">
-          <h4 id="footer-about" className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3">
+          <h4 id="footer-about" className="text-xs font-medium tracking-wider text-gray uppercase mb-3">
             Quick Link
           </h4>
           <ul className="space-y-2 text-sm">
@@ -66,7 +66,7 @@ export function SiteFooter() {
         <nav aria-labelledby="footer-getting-started" className="md:col-span-3">
           <h4
             id="footer-getting-started"
-            className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3"
+            className="text-xs font-medium tracking-wider text-gray uppercase mb-3"
           >
             Gate Branches
           </h4>
@@ -101,7 +101,7 @@ export function SiteFooter() {
 
         {/* Resources */}
         <nav aria-labelledby="footer-resources" className="md:col-span-3">
-          <h4 id="footer-resources" className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3">
+          <h4 id="footer-resources" className="text-xs font-medium tracking-wider text-gray uppercase mb-3">
            Support
           </h4>
           <ul className="space-y-2 text-sm">
@@ -135,7 +135,7 @@ export function SiteFooter() {
 
         {/* Social */}
         <div className="md:col-span-12 lg:col-span-3 md:mt-2">
-          <h4 className="text-xs font-medium tracking-wider text-muted-foreground uppercase mb-3">Social Media</h4>
+          <h4 className="text-xs font-medium tracking-wider text-gray uppercase mb-3">Social Media</h4>
           <p className="text-sm text-muted-foreground mb-4">Follow us for updates and progress.</p>
           <div className="flex items-center gap-4">
             <Link
