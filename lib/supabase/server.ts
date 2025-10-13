@@ -1,28 +1,40 @@
-import { cookies } from "next/headers"
-import { createServerClient } from "@supabase/ssr"
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 export function getSupabaseServer() {
-  const store = cookies()
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!
-  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  const cookieStore = cookies();
+
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
   const supabase = createServerClient(url, anon, {
     cookies: {
       get(name: string) {
-        return store.get(name)?.value
+        return cookieStore.get(name)?.value;
       },
-      set(name: string, value: string, options: any) {
-        // Next.js supports mutating cookies via headers
-        store.set(name, value, options)
+      set(name: string, value: string, options: CookieOptions) {
+        try {
+          cookieStore.set({ name, value, ...options });
+        } catch (error) {
+          // The `set` method was called from a Server Component.
+          // This can be ignored if you have middleware refreshing
+          // user sessions.
+        }
       },
-      remove(name: string, options: any) {
-        store.set(name, "", { ...options, maxAge: 0 })
+      remove(name: string, options: CookieOptions) {
+        try {
+          cookieStore.set({ name, value: "", ...options });
+        } catch (error) {
+          // The `delete` method was called from a Server Component.
+          // This can be ignored if you have middleware refreshing
+          // user sessions.
+        }
       },
     },
-  })
-  return supabase
+  });
+  return supabase;
 }
 
 export function getServerSupabase() {
-  return getSupabaseServer()
+  return getSupabaseServer();
 }

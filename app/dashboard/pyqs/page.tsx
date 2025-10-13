@@ -22,13 +22,6 @@ export default async function PYQsPage() {
     <main className="container mx-auto px-4 py-10">
       <h1 className="text-3xl md:text-4xl font-bold">Previous Year Questions</h1>
       <p className="text-muted-foreground mt-2">Practice with PYQs from your selected branch.</p>
-      
-      {/* --- DEBUGGING START --- */}
-      <div className="mt-4 p-4 border rounded-md bg-slate-800 text-white">
-          <h3 className="font-bold text-lg mb-2">Debugging Info:</h3>
-          <pre>{JSON.stringify({ profile }, null, 2)}</pre>
-      </div>
-      {/* --- DEBUGGING END --- */}
 
       <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {profile?.exam === "GATE" && profile?.branch === "CHE" ? (

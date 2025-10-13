@@ -1,0 +1,878 @@
+[
+  {
+  "id": "q1",
+  "section": "General Aptitude",
+  "questionNumber": 1,
+  "questionText": "Is there any good show _______ television tonight?\nSelect the most appropriate option to complete the above sentence.",
+  "options": {
+  "A": "in",
+  "B": "at",
+  "C": "within",
+  "D": "on"
+  },
+  "correctAnswer": "D",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q2",
+  "section": "General Aptitude",
+  "questionNumber": 2,
+  "questionText": "As the police officer was found guilty of embezzlement, he was _______ dismissed from the service in accordance with the Service Rules.\nSelect the most appropriate option to complete the above sentence.",
+  "options": {
+  "A": "sumptuously",
+  "B": "brazenly",
+  "C": "unintentionally",
+  "D": "summarily"
+  },
+  "correctAnswer": "D",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q3",
+  "section": "General Aptitude",
+  "questionNumber": 3,
+  "questionText": "The sum of the following infinite series is:\n\n1/1! + 1/2! + 1/3! + 1/4! + 1/5! + ⋯",
+  "options": {
+  "A": "π",
+  "B": "1+e",
+  "C": "e-1",
+  "D": "e"
+  },
+  "correctAnswer": "C",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q4",
+  "section": "General Aptitude",
+  "questionNumber": 4,
+  "questionText": "A thin wire is used to construct all the edges of a cube of 1 m side by bending, cutting and soldering the wire. If the wire is 12 m long, what is the minimum number of cuts required to construct the wire frame to form the cube?",
+  "options": {
+  "A": "3",
+  "B": "4",
+  "C": "6",
+  "D": "12"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q5",
+  "section": "General Aptitude",
+  "questionNumber": 5,
+  "questionText": "The figures I, II and III are parts of a sequence. Which one of the following options comes next in the sequence at IV?",
+  "hasImage": true,
+  "imageDescription": "Sequential pattern showing geometric shapes with rotation and transformation. Figure I shows a triangle with a circle, Figure II shows the triangle rotated with circle moved, Figure III continues the pattern, and you need to identify Figure IV from the given options.",
+  "options": {
+  "A": "Triangle rotated 90° clockwise with circle at bottom-left",
+  "B": "Triangle rotated 180° with circle at top-right",
+  "C": "Triangle rotated 270° with circle at bottom-right",
+  "D": "Triangle in original position with circle at center"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q6",
+  "section": "General Aptitude",
+  "questionNumber": 6,
+  "questionText": "Why do they pull down and do away with crooked streets, I wonder, which are my delight, and hurt no man living? Every day the wealthier nations are pulling down one or another in their capitals and their great towns: they do not know why they do it; neither do I. It ought to be enough, surely, to drive the great broad ways which commerce needs and which are the life-channels of a modern city, without destroying all history and all the humanity in between: the islands of the past.(From Hilaire Belloc's The Crooked Streets)Based only on the information provided in the above passage, which one of the following statements is true?",
+  "options": {
+  "A": "The author of the passage takes delight in wondering.",
+  "B": "The wealthier nations are pulling down the crooked streets in their capitals.",
+  "C": "In the past, crooked streets were only built on islands.",
+  "D": "Great broad ways are needed to protect commerce and history."
+  },
+  "correctAnswer": "B",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q7",
+  "section": "General Aptitude",
+  "questionNumber": 7,
+  "questionText": "Rohit goes to a restaurant for lunch at about 1 PM. When he enters the restaurant, he notices that the hour and minute hands on the wall clock are exactly coinciding. After about an hour, when he leaves the restaurant, he notices that the clock hands are again exactly coinciding. How much time (in minutes) did Rohit spend at the restaurant?",
+  "options": {
+  "A": "64 6/11",
+  "B": "66 5/13",
+  "C": "65 5/11",
+  "D": "66 6/13"
+  },
+  "correctAnswer": "C",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q8",
+  "section": "General Aptitude",
+  "questionNumber": 8,
+  "questionText": "A color model is shown in the figure with color codes: Yellow (Y), Magenta (M), Cyan (Cy), Red (R), Blue (Bl), Green (G), and Black (K).\n\nWhich one of the following options displays the color codes that are consistent with the color model?",
+  "hasImage": true,
+  "imageDescription": "A Venn diagram showing three overlapping circles representing primary colors (Red, Blue, Green) with their intersections showing secondary colors. The center where all three overlap shows Black (K).",
+  "options": {
+  "A": "Y = R + G, M = R + Bl, Cy = Bl + G, K = R + Bl + G",
+  "B": "Y = R + Bl, M = R + G, Cy = Bl + G, K = R + Bl + G",
+  "C": "Y = Bl + G, M = R + Bl, Cy = R + G, K = R + Bl + G",
+  "D": "Y = R + G, M = Bl + G, Cy = R + Bl, K = R + Bl + G"
+  },
+  "correctAnswer": "A",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q9",
+  "section": "General Aptitude",
+  "questionNumber": 9,
+  "questionText": "A circle with center at (x,y) = (0.5,0) and radius = 0.5 intersects with another circle with center at (x,y) = (1,1) and radius = 1 at two points. One of the points of intersection (x,y) is:",
+  "options": {
+  "A": "(0,0)",
+  "B": "(0.2,0.4)",
+  "C": "(0.5,0.5)",
+  "D": "(1,2)"
+  },
+  "correctAnswer": "B",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q10",
+  "section": "General Aptitude",
+  "questionNumber": 10,
+  "questionText": "An object is said to have an n-fold rotational symmetry if the object, rotated by an angle of 2π/n, is identical to the original.\n\nWhich one of the following objects exhibits 4-fold rotational symmetry about an axis perpendicular to the plane of the screen?\n\nNote: The figures shown are representative.",
+  "hasImage": true,
+  "imageDescription": "Four different geometric shapes: (A) A square, (B) A cross/plus sign, (C) A triangle, (D) A pentagon",
+  "options": {
+  "A": "Square",
+  "B": "Cross/Plus sign with equal arms",
+  "C": "Equilateral triangle",
+  "D": "Regular pentagon"
+  },
+  "correctAnswer": "B",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q11",
+  "section": "Chemical Engineering",
+  "questionNumber": 11,
+  "questionText": "To manufacture paper from (i), the (ii) must be freed from the binding matrix of (iii) in the pulping step.\n\nWhich one of the following is the CORRECT option to fill in the gaps (i), (ii) and (iii)?",
+  "options": {
+  "A": "(i) wood, (ii) cellulose fibers, (iii) lignin",
+  "B": "(i) lignin, (ii) cellulose fibers, (iii) wood",
+  "C": "(i) lignin, (ii) wood, (iii) cellulose fibers",
+  "D": "(i) wood, (ii) lignin, (iii) cellulose fibers"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q12",
+  "section": "Chemical Engineering",
+  "questionNumber": 12,
+  "questionText": "Consider a Cartesian coordinate system defined over a 3-dimensional vector space with orthogonal unit basis vectors î, ĵ and k̂.\n\nLet vector a = √2î + (1/√2)ĵ + k̂, and vector b = (1/√2)î + √2ĵ - k̂.\n\nThe inner product of these vectors (a∙b) is",
+  "options": {
+  "A": "0",
+  "B": "1",
+  "C": "-1",
+  "D": "2"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q13",
+  "section": "Chemical Engineering",
+  "questionNumber": 13,
+  "questionText": "Consider two complex numbers z₁ = 1-i and z₂ = i.\n\nThe argument of z₁z₂ is",
+  "options": {
+  "A": "0",
+  "B": "π/4",
+  "C": "π/2",
+  "D": "π"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q14",
+  "section": "Chemical Engineering",
+  "questionNumber": 14,
+  "questionText": "A box contains 3 identical green balls and 7 identical blue balls. Two balls are randomly drawn without replacement from the box.\n\nThe probability of drawing 1 green and 1 blue ball is",
+  "options": {
+  "A": "³P₁ × ⁷P₁ / ¹⁰P₂",
+  "B": "¹⁰P₃ × ¹⁰P₇ / ¹⁰P₂",
+  "C": "¹⁰C₃ × ¹⁰C₇ / ¹⁰C₂",
+  "D": "³C₁ × ⁷C₁ / ¹⁰C₂"
+  },
+  "correctAnswer": "D",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q15",
+  "section": "Chemical Engineering",
+  "questionNumber": 15,
+  "questionText": "The number of independent intensive variables that need to be specified to determine the thermodynamic state of a ternary mixture at vapor-liquid-liquid equilibrium is",
+  "options": {
+  "A": "0",
+  "B": "1",
+  "C": "2",
+  "D": "3"
+  },
+  "correctAnswer": "C",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q16",
+  "section": "Chemical Engineering",
+  "questionNumber": 16,
+  "questionText": "The boundary of a system does not allow exchange of either mass or energy (in the form of heat and/or work) with the surroundings.\n\nThe system is termed",
+  "options": {
+  "A": "Isolated",
+  "B": "Open",
+  "C": "Adiabatic",
+  "D": "Closed"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q17",
+  "section": "Chemical Engineering",
+  "questionNumber": 17,
+  "questionText": "In industrial heat exchanger design, the overall heat transfer coefficient U is estimated from the equation:\n\n1/U = 1/hᵢ + 1/h₀\n\nwhere hᵢ and h₀ are the convective heat transfer coefficients on the inner and outer side of the tube, respectively.\n\nThis is valid for (i) tube of (ii) thermal conductivity.\n\nWhich one of the following is the CORRECT option to fill in the gaps (i) and (ii)?",
+  "options": {
+  "A": "(i) thick-walled, (ii) high",
+  "B": "(i) thin-walled, (ii) high",
+  "C": "(i) thin-walled, (ii) low",
+  "D": "(i) thick-walled, (ii) low"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q18",
+  "section": "Chemical Engineering",
+  "questionNumber": 18,
+  "questionText": "The sum of the components of the force due to pressure and shear at the solid-fluid boundary of a solid body in the direction normal to the flow is",
+  "options": {
+  "A": "Drag",
+  "B": "Friction",
+  "C": "Lift",
+  "D": "Buoyancy"
+  },
+  "correctAnswer": "C",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q19",
+  "section": "Chemical Engineering",
+  "questionNumber": 19,
+  "questionText": "Choose the CORRECT option for pathlines, streaklines and streamlines for a STEADY flow field.",
+  "options": {
+  "A": "All three lines are identical",
+  "B": "Only pathlines and streaklines are identical",
+  "C": "Only pathlines and streamlines are identical",
+  "D": "Only streamlines and streaklines are identical"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q20",
+  "section": "Chemical Engineering",
+  "questionNumber": 20,
+  "questionText": "Choose the CORRECT ordering of the diameter d of the different types of pores in a solid catalyst.",
+  "options": {
+  "A": "d_Micro-pore < d_Macro-pore < d_Meso-pore",
+  "B": "d_Macro-pore < d_Meso-pore < d_Micro-pore",
+  "C": "d_Meso-pore < d_Micro-pore < d_Macro-pore",
+  "D": "d_Micro-pore < d_Meso-pore < d_Macro-pore"
+  },
+  "correctAnswer": "D",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q21",
+  "section": "Chemical Engineering",
+  "questionNumber": 21,
+  "questionText": "Schmidt number is defined as",
+  "options": {
+  "A": "Mass Diffusivity / Thermal Diffusivity",
+  "B": "Momentum Diffusivity / Mass Diffusivity",
+  "C": "Momentum Diffusivity / Thermal Diffusivity",
+  "D": "Thermal Diffusivity / Mass Diffusivity"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q22",
+  "section": "Chemical Engineering",
+  "questionNumber": 22,
+  "questionText": "If k is the mass transfer coefficient and Dᵥ is the molecular diffusivity, which one of the following statements is NOT CORRECT with respect to mass transfer theories?",
+  "options": {
+  "A": "For Film theory, k ∝ Dᵥ",
+  "B": "For Penetration theory, k ∝ Dᵥ^(1/3)",
+  "C": "For Surface Renewal theory, k ∝ Dᵥ^(1/2)",
+  "D": "For Boundary Layer theory, k ∝ Dᵥ^(2/3)"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q23",
+  "section": "Chemical Engineering",
+  "questionNumber": 23,
+  "questionText": "Choose the CORRECT statement that describes the dependence of the variance (σ²_Θ) of the residence time distribution (RTD) with respect to the number of tanks (n) in the Tanks-in-Series model of non-ideal reactors.",
+  "options": {
+  "A": "σ²_Θ monotonically increases with n",
+  "B": "σ²_Θ first increases and then decreases with n",
+  "C": "σ²_Θ first decreases and then increases with n",
+  "D": "σ²_Θ monotonically decreases with n"
+  },
+  "correctAnswer": "D",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q24",
+  "section": "Chemical Engineering",
+  "questionNumber": 24,
+  "questionText": "The vortex shedding meter is primarily used for measuring",
+  "options": {
+  "A": "Fluid Flow Rate",
+  "B": "Liquid Level",
+  "C": "Fluid Temperature",
+  "D": "Fluid Pressure"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q25",
+  "section": "Chemical Engineering",
+  "questionNumber": 25,
+  "questionText": "Choose the transfer function that best fits the output response to a unit step input change shown in the figure",
+  "hasImage": true,
+  "imageDescription": "A graph showing step response with initial delay, followed by a smooth S-shaped curve that approaches a steady-state value. The response shows characteristics of a second-order system with dead time.",
+  "options": {
+  "A": "(αs+1)e^(-θs) / [(τ₁s+1)(τ₂s+1)²]",
+  "B": "(αs+1)e^(-θs) / [(τ₁s+1)(τ₂s+1)]",
+  "C": "(αs+1) / [(τ₁s+1)(τ₂s+1)²]",
+  "D": "(αs+1)²e^(-θs) / [(τ₁s+1)(τ₂s+1)²]"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q26",
+  "section": "Chemical Engineering",
+  "questionNumber": 26,
+  "questionText": "The capital cost (CC) of an industrial equipment varies with its capacity (S) as CC ∝ S^β.\n\nThe rule-of-thumb value of the exponent β is",
+  "options": {
+  "A": "0.4",
+  "B": "0.6",
+  "C": "0.8",
+  "D": "1.0"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q27",
+  "section": "Chemical Engineering",
+  "questionNumber": 27,
+  "questionText": "In the production of polyvinyl chloride (PVC) from ethylene and chlorine, the sequential order of reactions is",
+  "options": {
+  "A": "Chlorination followed by Dehydrochlorination",
+  "B": "Dehydrochlorination followed by Chlorination",
+  "C": "Hydrogenation followed by Chlorination",
+  "D": "Dehydrochlorination followed by Hydrogenation"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q28",
+  "section": "Chemical Engineering",
+  "questionNumber": 28,
+  "questionText": "In the CONTACT PROCESS for manufacturing sulphuric acid, the reaction converting SO₂ to SO₃ is",
+  "options": {
+  "A": "Exothermic and reversible",
+  "B": "Endothermic and reversible",
+  "C": "Exothermic and irreversible",
+  "D": "Endothermic and irreversible"
+  },
+  "correctAnswer": "A",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q29",
+  "section": "Chemical Engineering",
+  "questionNumber": 29,
+  "questionText": "Choose the option that correctly matches the items in Group 1 with those in Group 2.\n\nGroup 1:\n(P) Coking\n(Q) Poisoning\n(R) Sintering\n\nGroup 2:\n(I) Prolonged exposure of catalyst to high temperature\n(II) Deposition of carbonaceous material on catalyst surface\n(III) Irreversible chemisorption of molecules on active sites of catalyst",
+  "options": {
+  "A": "(P) – (III), (Q) – (I), (R) – (II)",
+  "B": "(P) – (II), (Q) – (III), (R) – (I)",
+  "C": "(P) – (II), (Q) – (I), (R) – (III)",
+  "D": "(P) – (I), (Q) – (III), (R) – (II)"
+  },
+  "correctAnswer": "B",
+  "marks": 1,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q30",
+  "section": "Chemical Engineering",
+  "questionNumber": 30,
+  "questionText": "Which of the following statements regarding multiple effect evaporators is/are TRUE?",
+  "options": {
+  "A": "The pressure of the effect with fresh steam is the lowest for both forward feed and backward feed.",
+  "B": "Backward feed is preferred over forward feed for cold feed.",
+  "C": "Backward feed is preferred over forward feed for highly viscous concentrated product.",
+  "D": "The temperature of the effect with fresh steam is the lowest for both forward feed and backward feed."
+  },
+  "correctAnswer": "B,C",
+  "marks": 1,
+  "questionType": "MSQ"
+  },
+  {
+  "id": "q31",
+  "section": "Chemical Engineering",
+  "questionNumber": 31,
+  "questionText": "Consider an enzymatic reaction that follows Michaelis-Menten kinetics. Let K_M, S, and V_max denote the Michaelis constant, substrate concentration, and maximum reaction rate, respectively.\n\nWhich of the following statements is/are TRUE?",
+  "options": {
+  "A": "For S≪K_M, the reaction is apparent first-order in S.",
+  "B": "For S≫K_M, the reaction rate is nearly independent of S.",
+  "C": "For S=K_M, the rate of reaction equals V_max.",
+  "D": "K_M is independent of the total enzyme concentration."
+  },
+  "correctAnswer": "A,B,D",
+  "marks": 1,
+  "questionType": "MSQ"
+  },
+  {
+  "id": "q32",
+  "section": "Chemical Engineering",
+  "questionNumber": 32,
+  "questionText": "The following data is given for a ternary ABC gas mixture at 12 MPa and 308 K:\n\nComponent i → A: y_i = 0.55, φ̂_i = 0.75\nComponent i → B: y_i = 0.20, φ̂_i = 0.80\nComponent i → C: y_i = 0.25, φ̂_i = 0.95\n\nwhere:\ny_i: mole fraction of component i in the gas mixture\nφ̂_i: fugacity coefficient of component i in the gas mixture at 12 MPa and 308 K\n\nThe fugacity of the gas mixture is _____ MPa (rounded off to 3 decimal places).",
+  "correctAnswer": "9.66",
+  "marks": 1,
+  "questionType": "NAT",
+  "range": { "min": 9.651, "max": 9.692 }
+  },
+  {
+  "id": "q33",
+  "section": "Chemical Engineering",
+  "questionNumber": 33,
+  "questionText": "Ideal nonreacting gases A and B are contained inside a perfectly insulated chamber, separated by a thin partition, as shown in the figure.\n\nGas A: 2 mol at 300 K\nGas B: 3 mol at 400 K\n\nThe partition is removed, and the two gases mix till final equilibrium is reached. The change in total entropy for the process is ____ J/K (rounded off to 1 decimal place).\n\nGIVEN: Universal gas constant R = 8.314 J/(mol K)",
+  "hasImage": true,
+  "imageDescription": "A rectangular chamber divided by a thin partition. Left side contains Gas A (2 mol, 300 K), right side contains Gas B (3 mol, 400 K). The chamber is perfectly insulated.",
+  "correctAnswer": "18.7",
+  "marks": 1,
+  "questionType": "NAT",
+  "range": { "min": 18.5, "max": 18.9 }
+  },
+  {
+  "id": "q34",
+  "section": "Chemical Engineering",
+  "questionNumber": 34,
+  "questionText": "Oil is extracted from mustard seeds having 20 wt% oil and 80 wt% solids, using hexane as a solvent. After extraction, the hexane-free residual cake contains 1 wt% oil. Assuming negligible dissolution of cake in hexane, the percentage oil recovery in hexane is ____% (rounded off to the nearest integer).",
+  "correctAnswer": "95",
+  "marks": 1,
+  "questionType": "NAT",
+  "range": { "min": 95, "max": 97 }
+  },
+  {
+  "id": "q35",
+  "section": "Chemical Engineering",
+  "questionNumber": 35,
+  "questionText": "The residence-time distribution (RTD) function of a reactor (in min⁻¹) is:\n\nE(t) = {\n  1-2t,  for t ≤ 0.5 min\n  0,     for t > 0.5 min\n}\n\nThe mean residence time of the reactor is ____ min (rounded off to 2 decimal places).",
+  "correctAnswer": "0.17",
+  "marks": 1,
+  "questionType": "NAT",
+  "range": { "min": 0.04, "max": 0.18 }
+  },
+  {
+  "id": "q36",
+  "section": "Chemical Engineering",
+  "questionNumber": 36,
+  "questionText": "Consider a Cartesian coordinate system with orthogonal unit basis vectors î, ĵ defined over a domain: x,y ∈ [0,1].\n\nChoose the condition for which the divergence of the vector field v = axî - byĵ is zero.",
+  "options": {
+  "A": "a - b = 0",
+  "B": "a < b",
+  "C": "a > b",
+  "D": "a + b = 0"
+  },
+  "correctAnswer": "A",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q37",
+  "section": "Chemical Engineering",
+  "questionNumber": 37,
+  "questionText": "A probability distribution function is given as:\n\np(x) = {\n  1/a,  for x ∈ (0,a)\n  0,    otherwise\n}\n\nwhere a is a positive constant.\n\nFor a function f(x) = x², the expectation of f(x) is",
+  "options": {
+  "A": "a²/3",
+  "B": "a³/3",
+  "C": "2a²/3",
+  "D": "2a³/3"
+  },
+  "correctAnswer": "A",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q38",
+  "section": "Chemical Engineering",
+  "questionNumber": 38,
+  "questionText": "A hot plate is placed in contact with a cold plate of a different thermal conductivity as shown in the figure. The initial temperature (at time t=0) of the hot plate and cold plate are T_h and T_c, respectively. Assume perfect contact between the plates.\n\nWhich one of the following is an appropriate boundary condition at the surface S for solving the unsteady state, one-dimensional heat conduction equations for the hot plate and cold plate for t>0?",
+  "hasImage": true,
+  "imageDescription": "Two rectangular plates in contact. Left plate (hot) at temperature T_h, right plate (cold) at temperature T_c. The contact surface is marked as S.",
+  "options": {
+  "A": "Temperature at S is same for both the plates",
+  "B": "Gradient of temperature at S is same for both the plates",
+  "C": "Gradient of temperature vanishes at S",
+  "D": "Temperature at S is the average of T_h and T_c"
+  },
+  "correctAnswer": "A",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q39",
+  "section": "Chemical Engineering",
+  "questionNumber": 39,
+  "questionText": "The first-order irreversible liquid phase reaction A⟶B occurs inside a constant volume (V) isothermal CSTR with the initial steady state conditions shown in the figure.\n\nInitial steady state conditions:\n- Feed flow rate: F = 5 m³/h\n- Feed concentration: C_A0 = 3 kmol/m³\n- Reactor volume: V = 10 m³\n- Rate constant: k = 0.2 h⁻¹\n\nThe gain, in (kmol/m³)/(m³/h), of the transfer function relating the reactor effluent A concentration, c_A, to the inlet flow rate, F, is",
+  "hasImage": true,
+  "imageDescription": "A CSTR diagram showing feed stream entering with flow rate F and concentration C_A0, and product stream leaving with concentration C_A. The reactor has volume V and reaction rate constant k.",
+  "options": {
+  "A": "1.2",
+  "B": "0.4",
+  "C": "0.6",
+  "D": "0.8"
+  },
+  "correctAnswer": "C",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q40",
+  "section": "Chemical Engineering",
+  "questionNumber": 40,
+  "questionText": "500 mg of a dry adsorbent is added to a beaker containing 100 mL solution of concentration 100 mg phenol/(L solution). The adsorbent is separated out after 5 h of rigorous mixing. If the residual concentration in the solution after separating the adsorbent is 30 mg phenol/(L solution), the amount of phenol adsorbed (in mg per gram of dry adsorbent) is",
+  "options": {
+  "A": "7",
+  "B": "14",
+  "C": "28",
+  "D": "18"
+  },
+  "correctAnswer": "B",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q41",
+  "section": "Chemical Engineering",
+  "questionNumber": 41,
+  "questionText": "A catalyst particle is modeled as a symmetrical double cone solid as shown in the figure. For each conical sub-part, the radius of the base is r and the height is h.\n\nThe sphericity of the particle is given by",
+  "hasImage": true,
+  "imageDescription": "A symmetrical double cone (bicone) with two identical cones joined at their bases. Each cone has base radius r and height h.",
+  "options": {
+  "A": "2(r²h²)^(1/3) / [r√(r²+h²)]",
+  "B": "(r²h²)^(1/3) / [r√(r²+h²)]",
+  "C": "2(r²h²)^(2/3) / [r√(r²+h²)]",
+  "D": "(r²h²)^(2/3) / [r√(r²+h²)]"
+  },
+  "correctAnswer": "C",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q42",
+  "section": "Chemical Engineering",
+  "questionNumber": 42,
+  "questionText": "A zero-order gas phase reaction A→B with rate (-r_A) = k = 100 mol/(L min) is carried out in a mixed flow reactor of volume 1 L. Pure A is fed to the reactor at a rate of 1 mol/min. At time t=0, the outlet flow is stopped while the inlet flow rate and reactor temperature remain unchanged. Assume that the reactor was operating under steady state before the flow was stopped (t<0).\n\nThe rate of consumption of A, -dC_A/dt, in mol/(L min), at t=1 min is",
+  "options": {
+  "A": "63.2",
+  "B": "36.8",
+  "C": "90.6",
+  "D": "99.0"
+  },
+  "correctAnswer": "D",
+  "marks": 2,
+  "questionType": "MCQ"
+  },
+  {
+  "id": "q43",
+  "section": "Chemical Engineering",
+  "questionNumber": 43,
+  "questionText": "For a steady state, fully developed laminar flow of a Newtonian fluid through a cylindrical pipe at a constant volumetric flow rate, which of the following statements regarding the pressure drop across the pipe (ΔP) is/are TRUE?",
+  "options": {
+  "A": "ΔP increases with fluid viscosity",
+  "B": "ΔP increases with pipe length",
+  "C": "ΔP increases with pipe diameter",
+  "D": "ΔP remains unchanged with fluid viscosity"
+  },
+  "correctAnswer": "A,B",
+  "marks": 2,
+  "questionType": "MSQ"
+  },
+  {
+  "id": "q44",
+  "section": "Chemical Engineering",
+  "questionNumber": 44,
+  "questionText": "Consider the differential equation:\n\ndy/dx + y/x = 0\n\nChoose the CORRECT option(s) for the solution y.",
+  "options": {
+  "A": "y = x + c; c is a constant",
+  "B": "y = c/x; c is a constant",
+  "C": "y = -x + c; c is a constant",
+  "D": "y = 0"
+  },
+  "correctAnswer": "B,D",
+  "marks": 2,
+  "questionType": "MSQ"
+  },
+  {
+  "id": "q45",
+  "section": "Chemical Engineering",
+  "questionNumber": 45,
+  "questionText": "Consider the matrix:\n\nA = [2  3]\n    [1  2]\n\nThe eigenvalues of the matrix are 0.27 and ____ (rounded off to 2 decimal places).",
+  "correctAnswer": "3.73",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 3.68, "max": 3.78 }
+  },
+  {
+  "id": "q46",
+  "section": "Chemical Engineering",
+  "questionNumber": 46,
+  "questionText": "The Newton-Raphson method is used to find the root of:\n\nf(x) ≡ x² - x - 1 = 0\n\nStarting with an initial guess x⁽⁰⁾ = 1, the second iterate x⁽²⁾ is ____ (rounded off to 2 decimal places).",
+  "correctAnswer": "1.67",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 1.65, "max": 1.69 }
+  },
+  {
+  "id": "q47",
+  "section": "Chemical Engineering",
+  "questionNumber": 47,
+  "questionText": "Consider moist air with absolute humidity of 0.02 (kg moisture)/(kg dry air) at 1 bar pressure. The vapour pressure of water is given by the equation:\n\nln P_sat = 12 - 4000/(T-40)\n\nwhere P_sat is in bar and T is in K. The molecular weight of water and dry air are 18 kg/kmol and 29 kg/kmol, respectively.\n\nThe dew temperature of the moist air is _____ °C (rounded off to the nearest integer).",
+  "correctAnswer": "25",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 23, "max": 27 }
+  },
+  {
+  "id": "q48",
+  "section": "Chemical Engineering",
+  "questionNumber": 48,
+  "questionText": "An ideal monoatomic gas is contained inside a cylinder-piston assembly connected to a Hookean spring as shown in the figure. The piston is frictionless and massless. The spring constant is 10 kN/m. At the initial equilibrium state (shown in the figure), the spring is unstretched. The gas is expanded reversibly by adding 362.5 J of heat. At the final equilibrium state, the piston presses against the stoppers. Neglecting the heat loss to the surroundings, the final equilibrium temperature of the gas is ____ K (rounded off to the nearest integer).\n\nGIVEN: For a monoatomic ideal gas, C_v = (3/2)R, where R = 8.314 J/(mol K)",
+  "hasImage": true,
+  "imageDescription": "A cylinder-piston assembly with a spring attached to the piston. The cylinder contains gas, and there are stoppers that limit the piston movement. Initially, the spring is unstretched.",
+  "correctAnswer": "600",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 595, "max": 605 }
+  },
+  {
+  "id": "q49",
+  "section": "Chemical Engineering",
+  "questionNumber": 49,
+  "questionText": "A leaf filter is operated at 1 atm (gauge). The volume of filtrate collected (V in m³) is related with the volumetric flow rate of the filtrate (q in m³/s) as:\n\n1/q = 1/(dV/dt) = 50V + 100\n\nThe volumetric flow rate of the filtrate at 1 hour is ____ ×10⁻³ m³/s (rounded off to 2 decimal places).",
+  "correctAnswer": "1.65",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 1.61, "max": 1.68 }
+  },
+  {
+  "id": "q50",
+  "section": "Chemical Engineering",
+  "questionNumber": 50,
+  "questionText": "An adiabatic pump of efficiency 40% is used to increase the water pressure from 200 kPa to 600 kPa. The flow rate of water is 600 L/min. The specific heat of water is 4.2 kJ/(kg °C). Assuming water is incompressible with a density of 1000 kg/m³, the maximum temperature rise of water across the pump is ____°C (rounded off to 3 decimal places).",
+  "correctAnswer": "0.142",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 0.139, "max": 0.145 }
+  },
+  {
+  "id": "q51",
+  "section": "Chemical Engineering",
+  "questionNumber": 51,
+  "questionText": "Water flowing at 70 kg/min is heated from 25 °C to 65 °C in a counter-flow double pipe heat exchanger using hot oil. The oil enters at 110 °C and exits at 65 °C. If the overall heat transfer coefficient is 300 W/(m² K), the heat exchanger area is ____ m² (rounded off to 1 decimal place).\n\nGIVEN: Specific heat of water and oil are 4.2 kJ/(kg °C) and 2 kJ/(kg °C), respectively.",
+  "correctAnswer": "15.4",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 15.2, "max": 15.6 }
+  },
+  {
+  "id": "q52",
+  "section": "Chemical Engineering",
+  "questionNumber": 52,
+  "questionText": "Consider laminar flow of water over a wide flat plate maintained at a uniform temperature of 50 °C as shown in the figure. The freestream velocity and temperature of water are 1.0 m/s (parallel to the plate) and 20 °C, respectively. The distance x from the leading edge, at which the thermal boundary layer thickness δ_T = 0.01 m, is ____ m (rounded off to 1 decimal place).\n\nGIVEN:\nkinematic viscosity: ν = 1.0×10⁻⁶ m²/s\nPrandtl number: Pr = 7.01\nvelocity boundary layer thickness: δ_H = 4.91x/√(Vx/ν)",
+  "hasImage": true,
+  "imageDescription": "A flat plate with water flowing over it. The plate is heated to 50°C, and the water approaches at 20°C with velocity 1.0 m/s. Boundary layers are shown developing over the plate.",
+  "correctAnswer": "15.2",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 14.8, "max": 15.6 }
+  },
+  {
+  "id": "q53",
+  "section": "Chemical Engineering",
+  "questionNumber": 53,
+  "questionText": "An electrical wire of 2 mm diameter and 5 m length is insulated with a plastic layer of thickness 2 mm and thermal conductivity k = 0.1 W/(m K). It is exposed to ambient air at 30 °C. For a current of 5 A, the potential drop across the wire is 2 V. The air-side heat transfer coefficient is 20 W/(m² K). Neglecting the thermal resistance of the wire, the steady state temperature at the wire-insulation interface is ____°C (rounded off to 1 decimal place).",
+  "correctAnswer": "38.8",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 38.5, "max": 39.1 }
+  },
+  {
+  "id": "q54",
+  "section": "Chemical Engineering",
+  "questionNumber": 54,
+  "questionText": "A binary AB liquid mixture containing 30 mol% A is subjected to differential (Rayleigh) distillation at atmospheric pressure in order to recover 60 mol% A in the distillate. Assuming a constant relative volatility α_AB = 2.2, the average composition of the collected distillate is ____ mol% A (rounded off to nearest integer).",
+  "correctAnswer": "43",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 41, "max": 45 }
+  },
+  {
+  "id": "q55",
+  "section": "Chemical Engineering",
+  "questionNumber": 55,
+  "questionText": "Gas containing 0.8 mol% component A is to be scrubbed with pure water in a packed bed column to reduce the concentration of A to 0.1 mol% in the exit gas. The inlet gas and water flow rates are 0.1 kmol/s and 3.0 kmol/s, respectively.\n\nFor the dilute system, both the operating and equilibrium curves are considered linear. If the slope of the equilibrium line is 24, the number of transfer units, based on the gas side, N_OG is ____ (rounded off to 1 decimal place).",
+  "correctAnswer": "4.4",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 4.2, "max": 4.6 }
+  },
+  {
+  "id": "q56",
+  "section": "Chemical Engineering",
+  "questionNumber": 56,
+  "questionText": "Solute A is absorbed from a gas into water in a packed bed operating at steady state. The absorber operating pressure and temperature are 1 atm and 300 K, respectively. At the gas-liquid interface:\n\ny_i = 1.5 x_i\n\nwhere y_i and x_i are the interfacial gas and liquid mole fractions of A, respectively. At a particular location in the absorber, the mole fractions of A in the bulk gas and in the bulk water are 0.02 and 0.002, respectively. If the ratio of the local individual mass transfer coefficients for the transport of A on the gas-side (k_y) to that on the water-side (k_x), k_y/k_x = 2, then y_i equals ____ (rounded off to 3 decimal places).",
+  "correctAnswer": "0.015",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 0.014, "max": 0.017 }
+  },
+  {
+  "id": "q57",
+  "section": "Chemical Engineering",
+  "questionNumber": 57,
+  "questionText": "Components A and B form an azeotrope. The saturation vapour pressures of A and B at the boiling temperature of the azeotrope are 87 kPa and 72.7 kPa, respectively. The azeotrope composition is ____ mol% A (rounded off to the nearest integer).\n\nGIVEN:\nln(γ_A/γ_B) = 0.9(x_B² - x_A²)\n\nwhere x_i and γ_i are the liquid phase mole fraction and activity coefficient of component i, respectively.",
+  "correctAnswer": "60",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 58, "max": 62 }
+  },
+  {
+  "id": "q58",
+  "section": "Chemical Engineering",
+  "questionNumber": 58,
+  "questionText": "The reaction A→products with reaction rate, (-r_A) = kC_A³, occurs in an isothermal PFR operating at steady state. The conversion (X) at two axial locations (1 and 2) of the PFR is shown in the figure.\n\nLocation 1: X = 0.5\nLocation 2: X = 0.8\n\nThe value of l₁/l₂ is ____ (rounded off to 2 decimal places).",
+  "hasImage": true,
+  "imageDescription": "A plug flow reactor (PFR) diagram showing two axial positions. At position 1 (distance l₁), conversion X = 0.5. At position 2 (distance l₂), conversion X = 0.8.",
+  "correctAnswer": "0.25",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 0.22, "max": 0.27 }
+  },
+  {
+  "id": "q59",
+  "section": "Chemical Engineering",
+  "questionNumber": 59,
+  "questionText": "The catalytic gas phase reaction A→products is carried out in an isothermal batch reactor of 10 L volume using 0.1 kg of a solid catalyst. The reaction is first-order with:\n\n(-r_A) = k'a(t)C_A\n\nwhere k' = 1 L/(kg catalyst)(h) and C_A is the concentration of A in mol/L.\n\nThe catalyst activity a(t) undergoes first-order decay with rate constant k_d = 0.01 per hour and a(0) = 1.\n\nThe reactant conversion after 1 day of operation is ____ (rounded off to 2 decimal places).",
+  "correctAnswer": "0.19",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 0.17, "max": 0.21 }
+  },
+  {
+  "id": "q60",
+  "section": "Chemical Engineering",
+  "questionNumber": 60,
+  "questionText": "Consider a process with transfer function:\n\nG_p = 2e^(-s)/[(5s+1)²]\n\nA first-order plus dead time (FOPDT) model is to be fitted to the unit step process reaction curve (PRC) by applying the maximum slope method. Let τ_m and θ_m denote the time constant and dead time, respectively, of the fitted FOPDT model.\n\nThe value of τ_m/θ_m is ____ (rounded off to 2 decimal places).\n\nGIVEN: For G = 1/[(τs+1)²]\nthe unit step output response:\ny(t) = 1 - (1 + t/τ)e^(-t/τ)\ndy(t)/dt = (t/τ²)e^(-t/τ)\nd²y(t)/dt² = (1/τ²)(1 - t/τ)e^(-t/τ)",
+  "correctAnswer": "5.65",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 5.6, "max": 5.7 }
+  },
+  {
+  "id": "q61",
+  "section": "Chemical Engineering",
+  "questionNumber": 61,
+  "questionText": "Methanol is produced by the reversible, gas-phase hydrogenation of carbon monoxide as:\n\nCO + 2H₂ ⇌ CH₃OH\n\nCO and H₂ are charged to a reactor and the reaction proceeds to equilibrium at 453 K and 2 atm. The reaction equilibrium constant, which depends only on the temperature, is 1.68 at the reaction conditions. The mole fraction of H₂ in the product is 0.4. Assuming ideal gas behaviour, the mole fraction of methanol in the product is ____ (rounded off to 2 decimal places).",
+  "correctAnswer": "0.31",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 0.28, "max": 0.34 }
+  },
+  {
+  "id": "q62",
+  "section": "Chemical Engineering",
+  "questionNumber": 62,
+  "questionText": "The block diagram of a series cascade control system (with time in minutes) is shown in the figure. For τ_I = 8 min and K_cs = 1, the maximum value of K_cm, below which the cascade control system is stable, is ____ (rounded off to the nearest integer).",
+  "hasImage": true,
+  "imageDescription": "A block diagram showing a cascade control system with primary and secondary controllers, transfer functions, and feedback loops. The system includes time constants and gain parameters.",
+  "correctAnswer": "10",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 10, "max": 10 }
+  },
+  {
+  "id": "q63",
+  "section": "Chemical Engineering",
+  "questionNumber": 63,
+  "questionText": "It is proposed to install thermal insulation in a residence to save on the summer-monsoon season air-conditioning costs. The estimated yearly saving is 20 thousand rupees. The cost of installation of the insulation is 150 thousand rupees. The life of the insulation is 12 years. For a compound interest rate of 9% per annum, the minimum salvage value of the insulation for which the proposal is competitive, is ____ thousand rupees (rounded off to nearest integer).",
+  "correctAnswer": "19",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 18, "max": 20 }
+  },
+  {
+  "id": "q64",
+  "section": "Chemical Engineering",
+  "questionNumber": 64,
+  "questionText": "Consider the flowsheet in the figure for manufacturing C via the reaction A+B→C in an isothermal CSTR. The split in the separator is perfect so that the recycle stream is free of C and the product stream is pure C. Let x_i denote the mole fraction of species i (i=A,B,C) in the CSTR, which is operated in excess B with x_B/x_A = 4. The reaction is first-order in A with the reaction rate (-r_A) = k_x x_A, where k_x = 5.0 kmol/(m³ h).\n\nThe reactor volume V in m³ is to be optimized to minimize the cost objective J = V + 0.25R, where R is the recycle rate in kmol/h. For a product rate P = 100 kmol/h, the optimum value of V is ____ m³ (rounded off to the nearest integer).\n\nGIVEN: d/dz(z/(1-z)) = 1/(1-z)²",
+  "hasImage": true,
+  "imageDescription": "A process flowsheet showing a CSTR with feed streams A and B, a separator that splits the reactor output into a recycle stream (free of C) and a product stream (pure C). The recycle stream is mixed with fresh feed.",
+  "correctAnswer": "150",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 150, "max": 150 }
+  },
+  {
+  "id": "q65",
+  "section": "Chemical Engineering",
+  "questionNumber": 65,
+  "questionText": "A wet solid of 100 kg containing 30 wt% moisture is to be dried to 2 wt% moisture in a tray dryer. The critical moisture content is 10 wt% and the equilibrium moisture content is 1 wt%. The drying rate during the constant rate period is 10 kg/(h m²). The drying curve in the falling rate period is linear. If the drying area is 5 m², the time required for drying is ____ h (rounded off to 1 decimal place).\n\nNote: All the moisture values given are on dry-solid basis.",
+  "correctAnswer": "0.7",
+  "marks": 2,
+  "questionType": "NAT",
+  "range": { "min": 0.5, "max": 0.9 }
+  }
+  ]

@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import questions from "../2025-che-pyqs.json";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -19,22 +18,8 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-const shuffleArray = (array) => {
-  let currentIndex = array.length,
-    randomIndex;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-  return array;
-};
-
 const QuizPage = () => {
-  const [shuffledQuestions, setShuffledQuestions] = useState([]);
+  const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(180 * 60); // 3 hours in seconds
@@ -43,21 +28,32 @@ const QuizPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    setShuffledQuestions(shuffleArray([...questions]));
+    fetch("/2025-che-pyqs.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setQuestions(data);
+      })
+      .catch(error => {
+        console.error("Error fetching question data:", error);
+      });
   }, []);
 
   useEffect(() => {
-    if (quizStarted) {
+    if (quizStarted && timeLeft > 0) {
       const timer = setInterval(() => {
-        setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+        setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
       return () => clearInterval(timer);
+    } else if (timeLeft === 0) {
+        handleSubmit();
     }
-  }, [quizStarted]);
+  }, [quizStarted, timeLeft]);
 
   const handleStartQuiz = () => {
-    setShowGuidelines(false);
-    setQuizStarted(true);
+    if (questions.length > 0) {
+      setShowGuidelines(false);
+      setQuizStarted(true);
+    }
   };
 
   const handleAnswerSelect = (questionId, answer) => {
@@ -69,7 +65,7 @@ const QuizPage = () => {
 
   const handleSubmit = () => {
     const results = {
-      questions: shuffledQuestions,
+      questions: questions,
       answers: selectedAnswers,
       timeTaken: 180 * 60 - timeLeft,
     };
@@ -103,7 +99,9 @@ const QuizPage = () => {
               <li>Do not refresh the page during the test.</li>
             </ul>
             <div className="mt-6 flex justify-end">
-              <Button onClick={handleStartQuiz}>Start Test</Button>
+              <Button onClick={handleStartQuiz} disabled={questions.length === 0}>
+                {questions.length === 0 ? "Loading Questions..." : "Start Test"}
+              </Button>
             </div>
           </CardContent>
         </Card>
@@ -111,7 +109,7 @@ const QuizPage = () => {
     );
   }
 
-  const currentQuestion = shuffledQuestions[currentQuestionIndex];
+  const currentQuestion = questions[currentQuestionIndex];
 
   const openCalculator = () => {
     alert("Calculator functionality to be added.");
@@ -125,7 +123,7 @@ const QuizPage = () => {
           <div className="flex items-center space-x-4">
             <span className="font-semibold">
               Time Left: {Math.floor(timeLeft / 60)}:
-              {('''0''' + (timeLeft % 60)).slice(-2)}
+              {('0' + (timeLeft % 60)).slice(-2)}
             </span>
             <Button variant="outline" onClick={openCalculator}>Calculator</Button>
             <AlertDialog>
@@ -148,10 +146,10 @@ const QuizPage = () => {
           </div>
         </div>
         <Progress
-          value={((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}
+          value={((currentQuestionIndex + 1) / questions.length) * 100}
           className="mb-4"
         />
-        {currentQuestion && (
+        {currentQuestion ? (
           <Card>
             <CardHeader>
               <CardTitle>
@@ -162,7 +160,7 @@ const QuizPage = () => {
               </p>
             </CardHeader>
             <CardContent>
-              <p className="mb-4">{currentQuestion.questionText}</p>
+              <p className="mb-4 whitespace-pre-wrap">{currentQuestion.questionText}</p>
               {currentQuestion.questionType === 'MCQ' && 
                 <RadioGroup
                   onValueChange={(value) =>
@@ -170,7 +168,7 @@ const QuizPage = () => {
                   }
                   value={selectedAnswers[currentQuestion.id] || ""}
                 >
-                  {Object.entries(currentQuestion.options).map(([key, value]) => (
+                  {currentQuestion.options && Object.entries(currentQuestion.options).map(([key, value]) => (
                     <div key={key} className="flex items-center space-x-2">
                       <RadioGroupItem value={key} id={`${currentQuestion.id}-${key}`} />
                       <Label htmlFor={`${currentQuestion.id}-${key}`}>{key}: {value}</Label>
@@ -182,6 +180,8 @@ const QuizPage = () => {
               {currentQuestion.questionType === 'NAT' && <div>NAT input to be implemented</div>}
             </CardContent>
           </Card>
+        ) : (
+          <div>Loading question...</div>
         )}
         <div className="mt-4 flex justify-between">
           <Button
@@ -195,10 +195,10 @@ const QuizPage = () => {
           <Button
             onClick={() =>
               setCurrentQuestionIndex((prev) =>
-                Math.min(shuffledQuestions.length - 1, prev + 1)
+                Math.min(questions.length - 1, prev + 1)
               )
             }
-            disabled={currentQuestionIndex === shuffledQuestions.length - 1}
+            disabled={currentQuestionIndex === questions.length - 1}
           >
             Next
           </Button>
@@ -207,7 +207,7 @@ const QuizPage = () => {
       <div className="w-1/4 p-4 border-l overflow-y-auto">
         <h2 className="text-lg font-semibold mb-4">Questions</h2>
         <div className="grid grid-cols-4 gap-2">
-          {shuffledQuestions.map((q, index) => (
+          {questions.map((q, index) => (
             <Button
               key={q.id}
               variant={
@@ -215,9 +215,7 @@ const QuizPage = () => {
                   ? "default"
                   : "outline"
               }
-              className={`w-12 h-12 ${
-                currentQuestionIndex === index ? "ring-2 ring-primary" : ""
-              }`}
+              className={`w-12 h-12 ${currentQuestionIndex === index ? "ring-2 ring-primary" : ""}`}
               onClick={() => setCurrentQuestionIndex(index)}
             >
               {index + 1}

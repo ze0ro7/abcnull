@@ -1,21 +1,28 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const nav = [
-  { href: "/gate", label: "GATE" },
-  { href: "/ssc", label: "SSC" },
-  { href: "/jee", label: "JEE" },
-  { href: "/neet", label: "NEET" },
-  { href: "/pricing", label: "Pricing" },
+  { href: '/gate', label: 'GATE' },
+  { href: '/ssc', label: 'SSC' },
+  { href: '/jee', label: 'JEE' },
+  { href: '/neet', label: 'NEET' },
+  { href: '/pricing', label: 'Pricing' },
+]
+
+const dashboardNav = [
+  { href: '/dashboard/pyqs', label: 'PYQs' },
+  { href: '/dashboard/settings', label: 'Settings' },
 ]
 
 export function SiteHeader() {
   const pathname = usePathname()
+  const isDashboard = pathname.startsWith('/dashboard')
+  const currentNav = isDashboard ? dashboardNav : nav
 
   return (
     <header className="sticky top-0 z-40 h-16 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,16 +40,21 @@ export function SiteHeader() {
             <span className="sr-only">Back to home</span>
           </Link>
         </div>
-        <nav aria-label="Main" className="hidden md:flex items-center justify-center gap-6">
-          {nav.map((item) => {
+        <nav
+          aria-label="Main"
+          className="hidden md:flex items-center justify-center gap-6"
+        >
+          {currentNav.map((item) => {
             const active = pathname === item.href
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm transition-colors",
-                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+                  'text-sm transition-colors',
+                  active
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
                 )}
               >
                 {item.label}
@@ -52,12 +64,20 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center justify-end gap-2">
           <ThemeToggle />
-          <Button asChild variant="ghost" className="hidden sm:inline-flex">
-            <Link href="/auth/login">Login</Link>
-          </Button>
-          <Button asChild>
-            <Link href="/auth/signup">Sign up</Link>
-          </Button>
+          {isDashboard ? (
+            <Button asChild variant="ghost">
+              <Link href="/auth/logout">Logout</Link>
+            </Button>
+          ) : (
+            <>
+              <Button asChild variant="ghost" className="hidden sm:inline-flex">
+                <Link href="/auth/login">Login</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/auth/signup">Sign up</Link>
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </header>
