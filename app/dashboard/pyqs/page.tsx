@@ -34,7 +34,7 @@ export default async function PYQsPage() {
                         Full-length mock test based on the 2025 paper.
                     </p>
                     <Link href="/che/2025-pyqs">
-                        <Button>Start Test</Button>
+                        <Button className="cursor-pointer">Start Test</Button>
                     </Link>
                 </CardContent>
             </Card>

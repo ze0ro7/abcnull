@@ -8,8 +8,9 @@ import type { ReactNode } from "react"
 export function ConditionalLayoutWrapper({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const isDashboard = pathname.startsWith("/dashboard")
+  const isQuizPage = pathname.startsWith("/che/2025-pyqs")
 
-  if (isDashboard) {
+  if (isDashboard || isQuizPage) {
     return <>{children}</>
   }
 

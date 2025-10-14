@@ -1,26 +1,25 @@
--- create profiles table and secure with RLS
-create table if not exists public.profiles (
-  user_id uuid primary key references auth.users(id) on delete cascade,
-  full_name text,
-  exam text check (exam in ('GATE','SSC','JEE','NEET')),
-  branch text,
-  institution text,
-  created_at timestamptz not null default now()
+
+create table public.profiles (
+  id uuid not null default gen_random_uuid(),
+  user_id uuid not null,
+  full_name text null,
+  email text null,
+  exam text null,
+  branch text null,
+  institution text null,
+  created_at timestamp with time zone not null default now(),
+  updated_at timestamp with time zone not null default now(),
+  constraint profiles_pkey primary key (id),
+  constraint profiles_user_id_fkey foreign key (user_id) references auth.users (id) on delete cascade
 );
 
 alter table public.profiles enable row level security;
 
-do $$
-begin
-  if not exists (select 1 from pg_policies where polname = 'profiles_select_own') then
-    create policy profiles_select_own on public.profiles for select using (auth.uid() = user_id);
-  end if;
+create policy "Public profiles are viewable by everyone." on public.profiles
+  for select using (true);
 
-  if not exists (select 1 from pg_policies where polname = 'profiles_insert_own') then
-    create policy profiles_insert_own on public.profiles for insert with check (auth.uid() = user_id);
-  end if;
+create policy "Users can insert their own profile." on public.profiles
+  for insert with check (auth.uid() = user_id);
 
-  if not exists (select 1 from pg_policies where polname = 'profiles_update_own') then
-    create policy profiles_update_own on public.profiles for update using (auth.uid() = user_id);
-  end if;
-end $$;
+create policy "Users can update own profile." on public.profiles
+  for update using (auth.uid() = user_id);

@@ -1,84 +1,124 @@
-import { redirect } from "next/navigation";
-import { getSupabaseServer } from "@/lib/supabase/server";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export default async function SettingsPage() {
-  const supabase = getSupabaseServer();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+'use client';
 
-  if (!user) redirect("/auth/login");
+import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("exam, branch")
-    .eq("user_id", user.id)
-    .maybeSingle();
+type Exam = 'GATE' | 'SSC' | 'JEE' | 'NEET';
+const GATE_BRANCHES = ['CE', 'CHE', 'CSE', 'EE', 'ECE', 'ME'];
 
-  async function updateProfile(formData: FormData) {
-    "use server";
-    const exam = formData.get("exam") as string;
-    const branch = formData.get("branch") as string;
-    const supabase = getSupabaseServer();
-    const { error } = await supabase
-      .from("profiles")
-      .upsert({ user_id: user!.id, exam, branch }, { onConflict: 'user_id' });
+export default function SettingsPage() {
+  const [profile, setProfile] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [exam, setExam] = useState<Exam>('GATE');
+  const [branch, setBranch] = useState('');
+  const [institution, setInstitution] = useState('');
 
-    if (error) {
-      console.error("Error updating profile:", error);
-    } else {
-      redirect("/dashboard/pyqs");
+  useEffect(() => {
+    async function fetchProfile() {
+      const res = await fetch('/api/profile');
+      const data = await res.json();
+      setProfile(data);
+      setFullName(data.full_name);
+      setExam(data.exam);
+      setBranch(data.branch);
+      setInstitution(data.institution);
     }
-  }
+
+    fetchProfile();
+  }, []);
+
+  const onSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ full_name: fullName, exam, branch, institution }),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to update profile');
+      }
+
+      alert('Profile updated successfully!');
+    } catch (error: any) {
+      console.error('[v0] settings error:', error?.message || error);
+      alert(error?.message || 'Failed to update profile');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const isGate = exam === 'GATE';
 
   return (
-    <main className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl md:text-4xl font-bold">Settings</h1>
-      <p className="text-muted-foreground mt-2">Update your profile and preferences.</p>
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Settings</h1>
+      {profile ? (
+        <form onSubmit={onSave} className="grid gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="fullName">Full Name</Label>
+            <Input id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+          </div>
 
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Profile</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form action={updateProfile}>
-            <div className="grid gap-4">
-              <div>
-                <Label htmlFor="exam">Exam</Label>
-                <Select name="exam" defaultValue={profile?.exam}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select your exam" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="GATE">GATE</SelectItem>
-                    <SelectItem value="ESE">ESE</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Label htmlFor="branch">Branch</Label>
-                <Select name="branch" defaultValue={profile?.branch}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select your branch" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="CHE">Chemical Engineering</SelectItem>
-                    <SelectItem value="ME">Mechanical Engineering</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+          <div className="grid gap-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" value={profile.email} disabled />
+          </div>
+
+          <div className="grid gap-2">
+            <Label>Exam</Label>
+            <Select value={exam} onValueChange={(v: Exam) => setExam(v)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select Exam" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="GATE">GATE</SelectItem>
+                <SelectItem value="SSC">SSC</SelectItem>
+                <SelectItem value="JEE">JEE</SelectItem>
+                <SelectItem value="NEET">NEET</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {isGate && (
+            <div className="grid gap-2">
+              <Label>Branch (GATE)</Label>
+              <Select value={branch} onValueChange={setBranch}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select Branch" />
+                </SelectTrigger>
+                <SelectContent>
+                  {GATE_BRANCHES.map((b) => (
+                    <SelectItem key={b} value={b}>
+                      {b}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            <div className="mt-6">
-              <Button type="submit">Save Changes</Button>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
-    </main>
+          )}
+
+          <div className="grid gap-2">
+            <Label htmlFor="institution">School / College / University</Label>
+            <Input id="institution" value={institution} onChange={(e) => setInstitution(e.target.value)} required />
+          </div>
+
+          <Button type="submit" disabled={loading} className="w-full md:w-auto">
+            {loading ? 'Saving...' : 'Save Changes'}
+          </Button>
+        </form>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
   );
 }

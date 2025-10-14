@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -9,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select"
 
 type Exam = "GATE" | "SSC" | "JEE" | "NEET"
-const GATE_BRANCHES = ["CSE", "ECE", "EE", "ME", "CE", "CHE", "BT", "PI", "IN", "XE", "XL"]
+const GATE_BRANCHES = ["CE", "CHE", "CSE", "EE", "ECE", "ME"]
 
 export default function SignupForm() {
   const router = useRouter()
@@ -27,42 +28,22 @@ export default function SignupForm() {
     e.preventDefault()
     setLoading(true)
     try {
-      const { data, error } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
           emailRedirectTo:
             process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ||
             (typeof window !== "undefined" ? window.location.origin : undefined),
-          data: { full_name: fullName },
+          data: {
+            full_name: fullName,
+            exam,
+            branch: exam === "GATE" ? branch || null : null,
+            institution,
+          },
         },
       })
       if (error) throw error
-
-      // This avoids client-side policy/versioning timing and uses server-side auth context.
-      const payload = {
-        full_name: fullName,
-        exam,
-        branch: exam === "GATE" ? branch || null : null,
-        institution,
-      }
-      const res = await fetch("/api/profile", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-
-      if (!res.ok) {
-        const { error: apiErr } = await res.json().catch(() => ({ error: "Profile setup failed" }))
-        // Show specific guidance when schema isn't present yet.
-        if (typeof apiErr === "string" && apiErr.toLowerCase().includes("schema cache")) {
-          alert(
-            "Profiles table is not created yet. Please run the SQL script in scripts/sql/002_create_profiles_retry.sql from the Scripts sidebar, then try again.",
-          )
-        } else {
-          alert(apiErr || "Profile setup failed")
-        }
-      }
 
       router.replace("/dashboard")
     } catch (err: any) {

@@ -1,25 +1,56 @@
-import { NextResponse } from "next/server"
-import { getSupabaseServer } from "@/lib/supabase/server"
 
-export async function POST(req: Request) {
-  const supabase = getSupabaseServer()
-  const {
-    data: { user },
-    error: userErr,
-  } = await supabase.auth.getUser()
-  if (userErr || !user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+import { NextResponse } from "next/server";
+import { getSupabaseServer } from "@/lib/supabase/server";
 
-  const body = await req.json()
-  const payload = {
-    user_id: user.id,
-    full_name: body.full_name ?? null,
-    exam: body.exam ?? null,
-    branch: body.exam === "GATE" ? (body.branch ?? null) : null,
-    institution: body.institution ?? null,
-  }
+export async function GET(req: Request) {
+    try {
+        const supabase = getSupabaseServer();
+        const { data: { user } } = await supabase.auth.getUser();
 
-  const { error } = await supabase.from("profiles").upsert(payload, { onConflict: "user_id" })
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 })
+        if (!user) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
 
-  return NextResponse.json({ ok: true })
+        const { data, error } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('user_id', user.id)
+            .single();
+
+        if (error) {
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        return NextResponse.json(data);
+    } catch (error: any) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+}
+
+export async function PUT(req: Request) {
+    try {
+        const supabase = getSupabaseServer();
+        const { data: { user } } = await supabase.auth.getUser();
+
+        if (!user) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+
+        const { full_name, exam, branch, institution } = await req.json();
+
+        const { data, error } = await supabase
+            .from('profiles')
+            .update({ full_name, exam, branch, institution, updated_at: new Date() })
+            .eq('user_id', user.id)
+            .select()
+            .single();
+
+        if (error) {
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        return NextResponse.json(data);
+    } catch (error: any) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+    }
 }

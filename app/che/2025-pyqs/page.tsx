@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -17,11 +17,13 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const QuizPage = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [questionStatus, setQuestionStatus] = useState({});
   const [timeLeft, setTimeLeft] = useState(180 * 60); // 3 hours in seconds
   const [showGuidelines, setShowGuidelines] = useState(true);
   const [quizStarted, setQuizStarted] = useState(false);
@@ -32,11 +34,28 @@ const QuizPage = () => {
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data);
+        const initialStatus = {};
+        data.forEach((q) => {
+          initialStatus[q.id] = "notVisited";
+        });
+        setQuestionStatus(initialStatus);
       })
       .catch(error => {
         console.error("Error fetching question data:", error);
       });
   }, []);
+
+  useEffect(() => {
+    if (quizStarted) {
+      const currentQuestionId = questions[currentQuestionIndex]?.id;
+      if (currentQuestionId && questionStatus[currentQuestionId] === "notVisited") {
+        setQuestionStatus(prevStatus => ({
+          ...prevStatus,
+          [currentQuestionId]: "notAnswered",
+        }));
+      }
+    }
+  }, [currentQuestionIndex, questions, quizStarted, questionStatus]);
 
   useEffect(() => {
     if (quizStarted && timeLeft > 0) {
@@ -53,6 +72,13 @@ const QuizPage = () => {
     if (questions.length > 0) {
       setShowGuidelines(false);
       setQuizStarted(true);
+      const firstQuestionId = questions[0]?.id;
+      if(firstQuestionId) {
+        setQuestionStatus(prevStatus => ({
+          ...prevStatus,
+          [firstQuestionId]: "notAnswered",
+        }));
+      }
     }
   };
 
@@ -61,14 +87,65 @@ const QuizPage = () => {
       ...selectedAnswers,
       [questionId]: answer,
     });
+    setQuestionStatus(prevStatus => ({
+      ...prevStatus,
+      [questionId]: "answered",
+    }));
   };
 
-  const handleSubmit = () => {
+  const handleMarkForReview = () => {
+    const currentQuestionId = questions[currentQuestionIndex].id;
+    const currentStatus = questionStatus[currentQuestionId];
+
+    if (currentStatus === "answered") {
+      setQuestionStatus(prevStatus => ({
+        ...prevStatus,
+        [currentQuestionId]: "answeredAndReview",
+      }));
+    } else if(currentStatus !== 'reviewLater') {
+      setQuestionStatus(prevStatus => ({
+        ...prevStatus,
+        [currentQuestionId]: "reviewLater",
+      }));
+    } else {
+       setQuestionStatus(prevStatus => ({
+        ...prevStatus,
+        [currentQuestionId]: selectedAnswers[currentQuestionId] ? 'answered' : 'notAnswered',
+      }));
+    }
+  };
+
+  const handleSubmit = async () => {
+    const score = questions.reduce((acc, q) => {
+        if (q.correctAnswer === selectedAnswers[q.id]) {
+            return acc + q.marks;
+        }
+        return acc;
+    }, 0);
+
     const results = {
       questions: questions,
       answers: selectedAnswers,
+      statuses: questionStatus,
       timeTaken: 180 * 60 - timeLeft,
     };
+
+    try {
+      await fetch('/api/save-test', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ 
+              score, 
+              timeTaken: results.timeTaken, 
+              results: results 
+            }),
+      });
+    } catch (error) {
+      console.error("Error saving test results:", error);
+    }
+
     localStorage.setItem("quizResults", JSON.stringify(results));
     router.push(`/che/2025-pyqs/results`);
   };
@@ -99,7 +176,7 @@ const QuizPage = () => {
               <li>Do not refresh the page during the test.</li>
             </ul>
             <div className="mt-6 flex justify-end">
-              <Button onClick={handleStartQuiz} disabled={questions.length === 0}>
+              <Button className="cursor-pointer" onClick={handleStartQuiz} disabled={questions.length === 0}>
                 {questions.length === 0 ? "Loading Questions..." : "Start Test"}
               </Button>
             </div>
@@ -115,6 +192,23 @@ const QuizPage = () => {
     alert("Calculator functionality to be added.");
   };
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "answered":
+        return "bg-green-500 hover:bg-green-600 dark:bg-green-700 dark:hover:bg-green-800 text-white";
+      case "notAnswered":
+        return "bg-red-500 hover:bg-red-600 dark:bg-red-700 dark:hover:bg-red-800 text-white";
+      case "notVisited":
+        return "bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700 text-white";
+      case "reviewLater":
+        return "bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 text-white";
+      case "answeredAndReview":
+        return "bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 text-white";
+      default:
+        return "bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700 text-white";
+    }
+  };
+
   return (
     <div className="flex h-screen">
       <div className="w-3/4 p-8 overflow-y-auto">
@@ -125,10 +219,11 @@ const QuizPage = () => {
               Time Left: {Math.floor(timeLeft / 60)}:
               {('0' + (timeLeft % 60)).slice(-2)}
             </span>
+            <ThemeToggle />
             <Button variant="outline" onClick={openCalculator}>Calculator</Button>
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button variant="destructive">Submit</Button>
+                <Button className="cursor-pointer" variant="destructive">Submit</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
@@ -161,7 +256,7 @@ const QuizPage = () => {
             </CardHeader>
             <CardContent>
               <p className="mb-4 whitespace-pre-wrap">{currentQuestion.questionText}</p>
-              {currentQuestion.questionType === 'MCQ' && 
+              {currentQuestion.questionType === 'MCQ' &&
                 <RadioGroup
                   onValueChange={(value) =>
                     handleAnswerSelect(currentQuestion.id, value)
@@ -192,6 +287,9 @@ const QuizPage = () => {
           >
             Previous
           </Button>
+           <Button onClick={handleMarkForReview} variant="outline">
+            Mark for Review
+          </Button>
           <Button
             onClick={() =>
               setCurrentQuestionIndex((prev) =>
@@ -206,16 +304,21 @@ const QuizPage = () => {
       </div>
       <div className="w-1/4 p-4 border-l overflow-y-auto">
         <h2 className="text-lg font-semibold mb-4">Questions</h2>
+         <div className="mb-4 grid grid-cols-2 gap-2 text-sm">
+            <div className="flex items-center"><span className="w-4 h-4 rounded-full bg-green-500 dark:bg-green-700 mr-2"></span>Answered</div>
+            <div className="flex items-center"><span className="w-4 h-4 rounded-full bg-red-500 dark:bg-red-700 mr-2"></span>Not Answered</div>
+            <div className="flex items-center"><span className="w-4 h-4 rounded-full bg-gray-400 dark:bg-gray-600 mr-2"></span>Not Visited</div>
+            <div className="flex items-center"><span className="w-4 h-4 rounded-full bg-yellow-500 dark:bg-yellow-600 mr-2"></span>Review Later</div>
+            <div className="flex items-center col-span-2"><span className="w-4 h-4 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></span>Answered & Marked for Review</div>
+        </div>
         <div className="grid grid-cols-4 gap-2">
           {questions.map((q, index) => (
             <Button
               key={q.id}
               variant={
-                selectedAnswers[q.id]
-                  ? "default"
-                  : "outline"
+                currentQuestionIndex === index ? "default" : "outline"
               }
-              className={`w-12 h-12 ${currentQuestionIndex === index ? "ring-2 ring-primary" : ""}`}
+              className={`w-12 h-12 ${getStatusColor(questionStatus[q.id])} ${currentQuestionIndex === index ? "ring-2 ring-primary" : ""}`}
               onClick={() => setCurrentQuestionIndex(index)}
             >
               {index + 1}
