@@ -3,6 +3,11 @@ import { getSupabaseServer } from "@/lib/supabase/server"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { TestMarksChart } from "@/components/dashboard/test-marks-chart"
+import { QuestionStats } from "@/components/dashboard/question-stats"
+import { StreakCalendar } from "@/components/dashboard/streak-calendar"
+import { Badges } from "@/components/dashboard/badges"
+import { getTestResults } from "@/lib/test-results"
 
 export default async function DashboardPage() {
   const supabase = getSupabaseServer()
@@ -12,28 +17,31 @@ export default async function DashboardPage() {
 
   if (!user) redirect("/auth/login")
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("full_name, exam, branch, institution")
-    .eq("user_id", user.id)
-    .maybeSingle()
+  const [profile, testResults] = await Promise.all([
+    supabase
+      .from("profiles")
+      .select("full_name, exam, branch, institution")
+      .eq("user_id", user.id)
+      .maybeSingle(),
+    getTestResults(),
+  ]);
 
   return (
     <main className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl md:text-4xl font-bold">Welcome{profile?.full_name ? `, ${profile.full_name}` : ""}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold">Welcome{profile?.data?.full_name ? `, ${profile.data.full_name}` : ""}</h1>
       <p className="text-muted-foreground mt-2">Your personalized practice and analytics hub.</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Card>
-          <CardHeader>
-            <CardTitle>Quick Start</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Continue tests, browse PYQs, or start a mock.</p>
-          </CardContent>
-        </Card>
+        <div className="lg:col-span-2">
+          <TestMarksChart testResults={testResults} />
+        </div>
+        <QuestionStats testResults={testResults} />
+        <div className="lg:col-span-3">
+          <StreakCalendar testResults={testResults} />
+        </div>
+        <Badges />
 
-        {profile?.exam === "GATE" && profile?.branch === "CHE" && (
+        {profile?.data?.exam === "GATE" && profile?.data?.branch === "CHE" && (
             <Card>
                 <CardHeader>
                     <CardTitle>Chemical Engineering PYQs</CardTitle>
@@ -55,10 +63,10 @@ export default async function DashboardPage() {
             </CardHeader>
             <CardContent>
             <p className="text-sm text-muted-foreground">
-                Exam: {profile?.exam || "—"}
-                {profile?.exam === "GATE" && profile?.branch ? ` • Branch: ${profile.branch}` : ""}
+                Exam: {profile?.data?.exam || "—"}
+                {profile?.data?.exam === "GATE" && profile?.data?.branch ? ` • Branch: ${profile.data.branch}` : ""}
                 <br />
-                Institute: {profile?.institution || "—"}
+                Institute: {profile?.data?.institution || "—"}
             </p>
             </CardContent>
         </Card>
