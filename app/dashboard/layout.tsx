@@ -17,9 +17,11 @@ export default async function DashboardLayout({ children }: { children: ReactNod
 
   return (
     <div className="min-h-dvh grid grid-cols-[260px_1fr] grid-rows-[auto_1fr]">
-      <Sidebar />
+      <div className="fixed inset-y-0 w-[260px]">
+        <Sidebar />
+      </div>
       <Topbar name={displayName} />
-      <main className="col-start-2 row-start-2 p-4 md:p-8">{children}</main>
+      <main className="col-start-2 row-start-2 p-4 md:p-8 overflow-y-auto">{children}</main>
     </div>
   )
 }

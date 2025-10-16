@@ -19,7 +19,7 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="row-span-2 col-start-1 border-r bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 flex flex-col">
+    <aside className="h-full border-r bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 flex flex-col">
       <div className="flex h-16 items-center px-4 border-b">
         <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
           <img
@@ -55,8 +55,8 @@ export function Sidebar() {
         <Link
           href="/pricing"
           className={cn(
-            "flex items-center justify-center rounded-md bg-gradient-to-br from-sky-500/20 to-cyan-500/20",
-            "ring-1 ring-primary/30 px-3 py-2 text-sm font-medium text-primary",
+            "flex items-center justify-center rounded-md bg-gradient-to-br from-pink-500/20 to-orange-500/20",
+            "ring-1 ring-orange-500/60 px-3 py-2 text-sm font-medium text-orange-500 shadow-lg shadow-orange-500/40 hover:shadow-orange-500/60 transition-shadow",
           )}
         >
           <Gem className="mr-2 inline h-4 w-4" />

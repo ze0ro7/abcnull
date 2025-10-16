@@ -10,6 +10,7 @@ export function TestMarksChart({ testResults }) {
     })) || [];
 
     const latestTest = testResults?.[0];
+    const highestScore = testResults?.reduce((max, current) => (current.score > max ? current.score : max), 0) || 0;
 
     return (
         <Card>
@@ -22,6 +23,10 @@ export function TestMarksChart({ testResults }) {
                         <div className="text-3xl font-bold">{latestTest?.score || 0}</div>
                         <div className="text-sm text-muted-foreground">Latest Test Score</div>
                         <div className="text-sm text-muted-foreground">Attended: {testResults?.length || 0}</div>
+                    </div>
+                    <div>
+                        <div className="text-3xl font-bold">{highestScore}</div>
+                        <div className="text-sm text-muted-foreground">Highest Score</div>
                     </div>
                 </div>
                 <ResponsiveContainer width="100%" height={100}>
