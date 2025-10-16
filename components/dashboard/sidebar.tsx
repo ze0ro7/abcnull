@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Layers, BookOpen, ClipboardList, History, Settings, Gem } from "lucide-react"
+import { Layers, BookOpen, ClipboardList, History, Settings, Gem, BarChart, Library } from "lucide-react"
 import { LogoutButton } from "@/components/auth/logout-button"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -12,6 +12,8 @@ const items = [
   { href: "/dashboard/pyqs", label: "PYQs", icon: BookOpen },
   { href: "/dashboard/mocks", label: "Mocks", icon: ClipboardList },
   { href: "/dashboard/past-tests", label: "Past Tests", icon: History },
+  { href: "/dashboard/analytics", label: "Analytics", icon: BarChart },
+  { href: "/dashboard/resources", label: "Resources", icon: Library },
   { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ]
 
@@ -55,8 +57,8 @@ export function Sidebar() {
         <Link
           href="/pricing"
           className={cn(
-            "flex items-center justify-center rounded-md bg-gradient-to-br from-pink-500/20 to-orange-500/20",
-            "ring-1 ring-orange-500/60 px-3 py-2 text-sm font-medium text-orange-500 shadow-lg shadow-orange-500/40 hover:shadow-orange-500/60 transition-shadow",
+            "flex items-center justify-center rounded-md bg-gradient-to-br from-cyan-500/20 to-blue-500/20",
+            "ring-1 ring-blue-500/60 px-3 py-2 text-sm font-medium text-blue-500 shadow-lg shadow-blue-500/40 hover:shadow-blue-500/60 transition-shadow",
           )}
         >
           <Gem className="mr-2 inline h-4 w-4" />
