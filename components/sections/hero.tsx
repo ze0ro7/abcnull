@@ -4,22 +4,9 @@ import { UniverseBackground } from "./universe-background"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[92vh] sm:min-h-[100vh] lg:min-h-screen">
+    <section className="relative min-h-[92vh] sm:min-h-[100vh] lg:min-h-screen flex items-center justify-center">
       <UniverseBackground />
-      <div
-        className="absolute inset-0 pointer-events-none dark:opacity-0 opacity-100 mix-blend-multiply"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(800px 800px at 20% 10%, rgba(0,0,0,0.06), rgba(0,0,0,0) 60%), radial-gradient(600px 600px at 80% 20%, rgba(0,0,0,0.04), rgba(0,0,0,0) 60%), repeating-linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0.03) 1px, transparent 1px, transparent 48px), repeating-linear-gradient(to right, rgba(0,0,0,0.02), rgba(0,0,0,0.02) 1px, transparent 1px, transparent 48px)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/95 via-background/75 to-background/45"
-        aria-hidden="true"
-      />
-      <div className="container mx-auto px-4 py-20 sm:py-28 relative z-10">
-        {/* taller vertical rhythm */}
+      <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-balance bg-gradient-to-r from-teal-300 via-cyan-200 to-lime-300 bg-clip-text text-transparent">
             Crack exams faster with focused PYQs and realistic mocks

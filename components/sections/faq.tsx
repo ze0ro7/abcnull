@@ -45,8 +45,8 @@ export default function FAQSection() {
                 className="reveal-item"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <AccordionTrigger className="text-left">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+                <AccordionTrigger className="text-left text-lg font-sans py-6">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

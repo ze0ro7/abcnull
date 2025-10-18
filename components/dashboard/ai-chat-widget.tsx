@@ -6,18 +6,51 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 
-export function AIChatWidget() {
+export default function AiChatWidget() {
   const [messages, setMessages] = useState<{ role: "user" | "assistant"; text: string }[]>([])
   const [input, setInput] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
-  function onSend() {
+  async function onSend() {
     if (!input.trim()) return
-    setMessages((m) => [
-      ...m,
-      { role: "user", text: input.trim() },
-      { role: "assistant", text: "Thanks! I'll help you with that." },
-    ])
-    setInput("")
+
+    const userMessage = { role: "user" as const, text: input.trim() };
+    setMessages((m) => [...m, userMessage]);
+    setInput("");
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: input.trim() }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        setMessages((m) => [
+          ...m,
+          { role: "assistant", text: `Error: ${errorText}` },
+        ]);
+        return;
+      }
+
+      const { text } = await response.json();
+      setMessages((m) => [
+        ...m,
+        { role: "assistant", text },
+      ]);
+    } catch (error) {
+      console.error("Chat error:", error);
+      setMessages((m) => [
+        ...m,
+        { role: "assistant", text: "Sorry, something went wrong." },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -35,6 +68,11 @@ export function AIChatWidget() {
               </div>
             ))
           )}
+          {isLoading && (
+            <div className="">
+              <span className="inline-block rounded-md px-2 py-1 bg-primary/10">...</span>
+            </div>
+          )}
         </div>
         <div className="mt-2 flex items-center gap-2">
           <Input
@@ -42,8 +80,9 @@ export function AIChatWidget() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask AI..."
             onKeyDown={(e) => e.key === "Enter" && onSend()}
+            disabled={isLoading}
           />
-          <Button size="icon" onClick={onSend} aria-label="Send">
+          <Button size="icon" onClick={onSend} aria-label="Send" disabled={isLoading}>
             <Send className="h-4 w-4" />
           </Button>
         </div>

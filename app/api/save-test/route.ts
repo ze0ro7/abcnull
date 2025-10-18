@@ -18,7 +18,7 @@ export async function POST(req: Request) {
             .insert([
                 {
                     user_id: user.id,
-                    test_name: 'GATE 2025 Chemical Engineering PYQs',
+                    test_name: testData.test_name, // Changed from hardcoded value
                     score: testData.score,
                     time_taken: testData.timeTaken,
                     results: testData.results,
