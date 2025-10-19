@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/faq"
 import CTASection from "@/components/sections/cta"
 import { SectionRevealController } from "@/components/animations/section-reveal-controller"
 import TechShowcase from "@/components/sections/tech-showcase";
+import { CoreFeatures } from "@/components/sections/core-features";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
         <Features />
         <HowItWorksSection />
         <StatsSection />
+        <CoreFeatures />
         <BranchesGrid />
         <Testimonials />
         <FAQSection />

@@ -33,7 +33,7 @@ export function HowItWorksSection({ className }: { className?: string }) {
     >
       <div className="container mx-auto px-4">
         <header className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-          <h2 id="how-it-works-title" className="text-balance text-3xl md:text-4xl font-semibold">
+          <h2 id="how-it-works-title" className="font-heading text-balance text-3xl md:text-4xl">
             How Qprep works
           </h2>
           <p className="text-muted-foreground mt-3">
@@ -45,7 +45,7 @@ export function HowItWorksSection({ className }: { className?: string }) {
           {steps.map(({ icon: Icon, title, desc }, i) => (
             <div
               key={title}
-              className="reveal-item group rounded-xl border border-border/50 bg-card text-card-foreground p-5 md:p-6"
+              className="reveal-item group h-full rounded-xl border border-border/50 bg-card p-6 text-card-foreground transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_theme(colors.blue.500/50%)] md:p-8"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="flex items-center gap-3">

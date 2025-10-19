@@ -16,7 +16,7 @@ export function StatsSection({ className }: { className?: string }) {
     >
       <div className="container mx-auto px-4">
         <header className="max-w-xl mx-auto text-center mb-10">
-          <h2 id="stats-title" className="text-2xl md:text-3xl font-semibold text-balance">
+          <h2 id="stats-title" className="font-heading text-3xl md:text-2xl text-balance">
             Trusted numbers that keep growing
           </h2>
         </header>
