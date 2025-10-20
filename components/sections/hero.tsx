@@ -4,8 +4,11 @@ import { UniverseBackground } from "./universe-background"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[92vh] sm:min-h-[100vh] lg:min-h-screen flex items-center justify-center">
+    <section className="relative min-h-screen sm:min-h-screen lg:min-h-screen flex items-center justify-center">
       <UniverseBackground />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/95 via-background/75 to-background/45"
+            aria-hidden="true"
+        />
       <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-balance bg-gradient-to-r from-teal-300 via-cyan-200 to-lime-300 bg-clip-text text-transparent">

@@ -17,10 +17,10 @@ export default function HomePage() {
         <Hero />
         <TechShowcase />
         <Features />
-        <HowItWorksSection />
-        <StatsSection />
+        {/* <HowItWorksSection /> */}
         <CoreFeatures />
         <BranchesGrid />
+        <StatsSection />
         <Testimonials />
         <FAQSection />
         <CTASection />

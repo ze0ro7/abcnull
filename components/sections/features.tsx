@@ -25,8 +25,8 @@ export function Features() {
     },
   ]
   return (
-    <section id="features" className="reveal-init bg-section-alt">
-      <div className="container mx-auto px-4 py-24 sm:py-28 bg-card">
+    <section id="features" className="reveal-init bg-card">
+      <div className="container mx-auto px-4 py-24 sm:py-28">
         {/* increase section height */}
         <header className="reveal-item mb-12 text-center">
           <h2 className="font-heading text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
