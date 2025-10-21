@@ -10,6 +10,7 @@ const nav = [
   { href: '/gate', label: 'GATE' },
   { href: '/ssc', label: 'SSC' },
   { href: '/jee', label: 'JEE' },
+  { href: '/olympiad', label: 'Olympiad' },
   { href: '/neet', label: 'NEET' },
   { href: '/pricing', label: 'Pricing' },
 ]
